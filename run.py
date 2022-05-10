@@ -6,6 +6,7 @@ ASCII_BANNER = pyfiglet.figlet_format(
     "Hello!! \n WELCOME TO TIC TAC TOE GAME!!")
 COLOR_CHOICES = ["1- Red", "2-Yellow"]
 
+
 # A function to print the Tic Tac Toe board
 class Game:
     """
@@ -28,10 +29,8 @@ class Game:
             self.color = 'red'
         elif color == "2":
             self.color = 'yellow'
-        print(colored("You choose your color !!", self.color))    
+        print(colored("You choose your color !!", self.color))
         print(color)
-
-
 
 
 def print_tic_tac_toe(values):
@@ -55,7 +54,7 @@ def welcome():
     print(ASCII_BANNER)
     print("Please Enter your name: \n")
     username = input().strip()
-    
+
     while len(username) == 0:
         print("It looks like you haven't typed anything, please enter your name!")  # noqa
         username = input().strip()
