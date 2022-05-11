@@ -35,6 +35,30 @@ class Game:
             self.computer = ProComputerPlayer('O')
         self.player = RealPlayer('X')
 
+
+    def print_board(self):
+        print('')
+        print("Available Moves       Game Board")
+        for num, row in enumerate([self.board[i*3:(i+1)*3] for i in range(3)]):
+            availableMoves = self.available_moves_display()
+            availableRow = availableMoves[num*3:(num+1)*3]
+            availablePart = '| ' + ' | '.join(availableRow) + ' |'
+            boardPart = '       | ' + ' | '.join(row) + ' |'
+            print(availablePart + boardPart)
+
+    @staticmethod
+    def print_board_nums():
+        """
+        Tells us which number corresponds to each empty space
+        1 | 2 | 3 etc.
+        """
+        number_board = [[str(i) for i in range(j*3, (j+1)*3)] for j in range(3)]  # noqa
+        for row in number_board:
+            numered_board = '| ' + ' | '.join(row) + ' |'
+            print(numered_board)
+
+        print('')    
+
     def get_color(self):
         print("choose your color")
         print(COLOR_CHOICES)
