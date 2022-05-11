@@ -4,10 +4,10 @@ import random
 
 class Player():
     """
-    A superclass is created for the user, the computer  level 
-    and computer hard level. 
+    A superclass is created for the user, the computer  level
+    and computer hard level.
     Player class to select a tag ( X or O) and a game.
-    
+
     """
     def __init__(self, letter):
         self.letter = letter
@@ -15,11 +15,12 @@ class Player():
     def get_move(self, game):
         pass
 
+
 class RealPlayer(Player):
-     """
+    """
      The RealPlayer class is used to define a real player
-     who plays against another real player. 
-     It makes its moves taking into account the player's input 
+     who plays against another real player.
+     It makes its moves taking into account the player's input
      regarding the available squares on the board.
 
      """
@@ -41,11 +42,13 @@ class RealPlayer(Player):
                 print('Invalid move. Try again.')
         return val
 
+
 class NoobComputerPlayer(Player):
     """
     The class noobComputerPlayer is used to define a computer
-    against which the user can play. 
-    It makes its moves randomly, depending on what moves are available on the game board.
+    against which the user can play.
+    It makes its moves randomly, depending on what moves
+    are available on the game board.
 
     """
 
@@ -59,7 +62,10 @@ class NoobComputerPlayer(Player):
 
 class ProComputerPlayer(Player):
     """
-    
+    ProComputerPlayer is a class that defines an unbeatable
+    computer player that uses a minimax algorithm to function.
+    The algorithm maximizes his score while minimizing his
+    losses, making it impossible to defeat him.
 
     """
     def __init__(self, letter):
@@ -102,4 +108,5 @@ class ProComputerPlayer(Player):
             else:
                 if sim_score['score'] < best['score']:
                     best = sim_score
-        return best        
+
+        return best

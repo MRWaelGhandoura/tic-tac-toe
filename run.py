@@ -1,3 +1,6 @@
+import math
+import time
+from player import RealPlayer, NoobComputerPlayer, ProComputerPlayer
 from termcolor import colored
 import pyfiglet
 
@@ -19,9 +22,18 @@ class Game:
     To check if the last move is a winning move
 
     """
-    def __init__(self, username):
+    def __init__(self, username, game_mode):
         self.username = username
         self.color = self.get_color()
+        self.board = [' ' for _ in range(9)]  # 3x3 game board
+        self.current_winner = None  # track the winner
+        if game_mode == 'easy':
+            print(f"You've selected {game_mode}, good luck!\n")
+            self.computer = NoobComputerPlayer('O')
+        elif game_mode == 'hard':
+            print(f"You've selected {game_mode}, try your hardest to beat the computer!\n")  # noqa
+            self.computer = ProComputerPlayer('O')
+        self.player = RealPlayer('X')
 
     def get_color(self):
         print("choose your color")
@@ -37,22 +49,8 @@ class Game:
         print(colored("You choose your color !!", self.color))
         print(color)
 
-
-def print_tic_tac_toe(values):
-    print("\n")
-    print("\t     |     |")
-    print("\t  {}  |  {}  |  {}".format(values[0], values[1], values[2]))
-    print('\t_____|_____|_____')
-
-    print("\t     |     |")
-    print("\t  {}  |  {}  |  {}".format(values[3], values[4], values[5]))
-    print('\t_____|_____|_____')
-
-    print("\t     |     |")
-
-    print("\t  {}  |  {}  |  {}".format(values[6], values[7], values[8]))
-    print("\t     |     |")
-    print("\n")
+    
+   
 
 
 def welcome():
