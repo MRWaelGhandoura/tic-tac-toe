@@ -49,7 +49,7 @@ class Game:
     @staticmethod
     def print_board_nums():
         """
-        Tells us which number corresponds to each empty space
+        show us the number corresponds to each empty space
         1 | 2 | 3 etc.
         """
         number_board = [[str(i) for i in range(j*3, (j+1)*3)] for j in range(3)]  # noqa
@@ -57,7 +57,117 @@ class Game:
             numered_board = '| ' + ' | '.join(row) + ' |'
             print(numered_board)
 
-        print('')    
+        print('')
+
+    def play(game_mode, print_game=True):
+    """
+    returns the winner of the game or None if it's a tie
+    """
+
+    game = Game(username, game_mode)
+
+    if print_game:
+        game.print_board_nums()
+
+    tag = 'X'  # starting tag
+
+    while game.empty_squares():
+        """
+        iterate as long as the game-board still has empty squares
+        gets move from appropriate player
+        """
+        if tag == 'O':
+            square = game.computer.get_move(game)
+        else:
+            square = game.player.get_move(game)
+
+        if game.make_move(square, tag):
+            if print_game:
+                print(tag + f' makes a move to square {square}')
+                game.print_board()
+                print('')  # empty line
+
+            if game.current_winner:
+                if print_game:
+                    print(tag + ' wins!')
+                return tag
+
+            # alternates / switches players for each round
+            if tag == 'X':
+                tag = 'O'
+            else:
+                tag = 'X'
+
+        time.sleep(2)  # a break in between moves to make the game more user friendly # noqa
+    if print_game:
+        print('It\'s a tie!') 
+
+    def available_moves_display(self):
+        moves = []
+        for (i, spot) in enumerate(self.board):
+            if spot == ' ':
+                moves.append(str(i))
+            else:
+                moves.append(' ')
+        return moves
+
+    def available_moves(self):
+        moves = []
+        for (i, spot) in enumerate(self.board):
+            if spot == ' ':
+                moves.append(i)
+        return moves
+
+    def empty_squares(self):
+        return ' ' in self.board
+
+    def num_empty_squares(self):
+        return self.board.count(' ')
+
+    def make_move(self, square, tag):
+        """
+        if the move is valid, proceed & return True
+        if the move is invalid, return False
+        """
+        if self.board[square] == ' ':
+            self.board[square] = tag
+            if self.winner(square, tag):
+                self.current_winner = tag
+            return True
+        return False       
+
+    def winner(self, square, letter):
+        # check the row
+        row_ind = math.floor(square / 3)
+        row = self.board[row_ind*3:(row_ind+1)*3]
+        # print('row', row)
+        if all([s == letter for s in row]):
+            return True
+        col_ind = square % 3
+        column = [self.board[col_ind+i*3] for i in range(3)]
+        # print('col', column)
+        if all([s == letter for s in column]):
+            return True
+        if square % 2 == 0:
+            diagonal1 = [self.board[i] for i in [0, 4, 8]]
+            # print('diag1', diagonal1)
+            if all([s == letter for s in diagonal1]):
+                return True
+            diagonal2 = [self.board[i] for i in [2, 4, 6]]
+            # print('diag2', diagonal2)
+            if all([s == letter for s in diagonal2]):
+                return True
+        return False
+
+    def empty_squares(self):
+        return ' ' in self.board
+
+    def num_empty_squares(self):
+        return self.board.count(' ')
+
+    def available_moves(self):
+        return [i for i, x in enumerate(self.board) if x == " "]
+        
 
     def get_color(self):
         print("choose your color")
@@ -73,8 +183,6 @@ class Game:
         print(colored("You choose your color !!", self.color))
         print(color)
 
-    
-   
 
 
 def welcome():
