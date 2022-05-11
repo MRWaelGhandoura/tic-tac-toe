@@ -10,8 +10,13 @@ COLOR_CHOICES = ["1- Red", "2-Yellow"]
 # A function to print the Tic Tac Toe board
 class Game:
     """
-    A class to play tic tac toe
-
+    A class to define the structure of the Tic tac toe game:
+    A welcome massage
+    A Game board
+    A Display board
+    To Make a move with a tag
+    To Validate the move
+    To check if the last move is a winning move
 
     """
     def __init__(self, username):
