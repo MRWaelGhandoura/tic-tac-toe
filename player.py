@@ -32,3 +32,4 @@ class RealPlayer(Player):
             except ValueError:
                 print('Invalid move. Try again.')
         return val
+
