@@ -50,7 +50,7 @@ class RealPlayer(ActualPlayer):
         valid_square = False
         val = None
         while not valid_square:
-            square = input(self.character + '\'s turn. Make a move:')
+            square = input(self.character + '\'s turn. Make a move:\n')
             try:
                 val = int(square)
                 if val not in game.available_moves():
