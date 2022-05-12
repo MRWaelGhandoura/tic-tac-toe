@@ -1,4 +1,4 @@
-from player import RealPlayer, NoobComputerPlayer, ProComputerPlayer
+from players import RealPlayer, NoobComputerPlayer, ProComputerPlayer
 from colorama import Fore
 from termcolor import colored
 import time
@@ -24,7 +24,7 @@ class TicTacToe:
             print(f"You've selected {game_mode}, good luck!\n")
             self.computer = NoobComputerPlayer('O')
         elif game_mode == 'hard':
-            print(f"You've selected {game_mode}, try your hardest to beat the computer!\n")  # noqa
+            print(f"You've selected {game_mode}, good luck beating the PRO!\n")
             self.computer = ProComputerPlayer('O')
         self.player = RealPlayer('X')
 
@@ -90,6 +90,7 @@ class TicTacToe:
     def available_moves(self):
         return [i for i, x in enumerate(self.board) if x == " "]
 
+
 def play(game_mode, print_game=True):
     """
     returns the winner of the game or None if it's a tie
@@ -122,7 +123,7 @@ def play(game_mode, print_game=True):
                 if print_game:
                     print(character + ' wins!')
                 return character
-            
+
             # alternates between players each round
             if character == 'X':
                 character = 'O'
@@ -134,20 +135,21 @@ def play(game_mode, print_game=True):
     if print_game:
         print('It\'s a tie!')
 
+
 def welcome():
-    
+
     print(Fore.YELLOW + "███████████████████████████████████████")
     print("█                                     █")
-    print("█   ▄▄█▄▄█▄▄   " + Fore.BLUE + "TIC" + Fore.YELLOW + "                █")  
+    print("█   ▄▄█▄▄█▄▄   " + Fore.BLUE + "TIC" + Fore.YELLOW + "                █")
     print("█   ▄▄█▄▄█▄▄       TAC                  █")
-    print("█   " + Fore.RED + "X" + Fore.YELLOW + " █  █ " + Fore.BLUE + "O" + Fore.YELLOW + "       " + Fore.RED + "TOE" + Fore.YELLOW + "            █") 
+    print("█   " + Fore.RED + "X" + Fore.YELLOW + " █  █ " + Fore.BLUE + "O" + Fore.YELLOW + "       " + Fore.RED + "TOE" + Fore.YELLOW + "            █")
     print("█                                     █")
     print("█                    By Wael Ghandoura█")
     print("███████████████████████████████████████\n")
-    
+
     time.sleep(2)
 
-    print("Welcome to " + Fore.BLUE + "TIC" + Fore.YELLOW + "TAC " + Fore.RED + "TOE" + Fore.YELLOW + "!") 
+    print("Welcome to " + Fore.BLUE + "TIC" + Fore.YELLOW + "TAC " + Fore.RED + "TOE" + Fore.YELLOW + "!")
 
     time.sleep(2)
 

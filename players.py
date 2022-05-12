@@ -2,12 +2,12 @@ import math
 import random
 
 
-class Player():
+class ActualPlayer():
     """
-    A superclass is created for the user, the computer  level 
-    and computer hard level. 
-    Player class to select a inputTag  X  O and a game.
-    
+    A superclass is created for the user, the computer  level
+    and computer Pro level.
+    Player class to select a character  X  O and a game.
+
     """
     def __init__(self, character):
         self.character = character
@@ -15,36 +15,11 @@ class Player():
     def get_move(self, game):
         pass
 
-class RealPlayer(Player):
-     """
-     The RealPlayer class is used to define a real player
-     who plays against another real player. 
-     It makes its moves taking into account the player's input 
-     regarding the available squares on the board.
 
-     """
-
-    def __init__(self, character):
-        super().__init__(character)
-
-    def get_move(self, game):
-        valid_square = False
-        val = None
-        while not valid_square:
-            square = input(self.character + '\'s turn. Input move (0-8): ')
-            try:
-                val = int(square)
-                if val not in game.available_moves():
-                    raise ValueError
-                valid_square = True
-            except ValueError:
-                print('Invalid move. Try again.')
-        return val
-
-class NoobComputerPlayer(Player):
+class NoobComputerPlayer(ActualPlayer):
     """
     The class noobComputerPlayer is used to define a computer
-    against which the user can play. 
+    against which the user can play.
     It makes its moves randomly, depending on what moves are available on the game board.
 
     """
@@ -57,7 +32,35 @@ class NoobComputerPlayer(Player):
         return square
 
 
-class ProComputerPlayer(Player):
+class RealPlayer(ActualPlayer):
+    """
+     The RealPlayer class is used to define a real player
+     who plays against another real player.
+     It makes its moves taking into account the player's input
+     regarding the available squares on the board.
+
+    """
+
+    def __init__(self, character):
+        super().__init__(character)
+
+    def get_move(self, game):
+        valid_square = False
+        val = None
+        while not valid_square:
+            square = input(self.character + '\'s turn. Make a move:')
+            try:
+                val = int(square)
+                if val not in game.available_moves():
+                    raise ValueError
+                valid_square = True
+            except ValueError:
+                print('Invalid square. Try again.')
+
+        return val
+
+
+class ProComputerPlayer(ActualPlayer):
     """
     ProComputerPlayer is a class that defines an unbeatable
     computer player that uses a minimax algorithm to function.
@@ -65,18 +68,18 @@ class ProComputerPlayer(Player):
      losses, making it impossible to defeat him.
 
     """
-    def __init__(self, input_tag):
-        super().__init__(input_tag)
+    def __init__(self, character):
+        super().__init__(character)
 
     def get_move(self, game):
         if len(game.available_moves()) == 9:
             square = random.choice(game.available_moves())
         else:
-            square = self.minimax(game, self.input_tag)['position']
+            square = self.minimax(game, self.character)['position']
         return square
 
     def minimax(self, state, player):
-        max_player = self.input_tag  # User
+        max_player = self.character  # User
         other_player = 'O' if player == 'X' else 'X'
 
         # Checking the previous move if it is a win move
@@ -105,4 +108,4 @@ class ProComputerPlayer(Player):
             else:
                 if sim_score['score'] < best['score']:
                     best = sim_score
-        return best        
+        return best
