@@ -58,7 +58,7 @@ class TicTacToe:
         return False
 
     def get_color(self):
-        print("choose your color")
+        print("Choose your favorite color")
         print(COLOR_CHOICES)
         color = input().strip()
         while color not in ["1", "2"]:
@@ -68,13 +68,13 @@ class TicTacToe:
             self.color = 'red'
         elif color == "2":
             self.color = 'yellow'
-        print(colored("You choose your color !!", self.color))
-        print(color)    
+        print(colored("This is your color !!", self.color))
+        print(color)
 
-    # code credit: https://www.youtube.com/watch?v=n2o8ckO-lfk&list=PLAA3uifegEK98UkLE614yowsG7OHfANz9&index=1&t=663s
+    # code credit: https://www.youtube.com/watch?v=n2o8ckO-lfk&list=PLAA3uifegEK98UkLE614yowsG7OHfANz9&index=1&t=663s  # noqa
     def winner(self, square, character):
         """
-        winner if player ticks 3 in a row (either vertically, horizontally, or diagonally)
+        winner if player ticks 3 in a row (vertically, horizontally, or diagonally)
         """
 
         # checks row
@@ -125,8 +125,8 @@ def play(game_mode, print_game=True):
 
     while game.empty_squares():
         """
-        iterate as long as the game-board still has empty squares
-        gets move from appropriate player
+        as long as the game board still has empty squares,
+        the corresponding player gets a turn.
         """
         if character == 'O':
             square = game.computer.get_move(game)
@@ -176,7 +176,7 @@ def welcome():
 
     # code credit: help from https://stackoverflow.com/questions/42091015/check-if-python-input-contains-a-specific-word/42091192 # noqa
     while True:
-        difficulty = input("Please select a difficulty to continue. Type in 'easy', 'hard' or 'quit' to exit: \n").strip().lower()  # noqa
+        difficulty = input("Select a difficulty to start playing. Type in 'easy', 'hard' or 'quit' to exit: \n").strip().lower()  # noqa
         time.sleep(2)
         if difficulty == 'quit':
             print(f"Thanks for playing {username}, goodbye!")
