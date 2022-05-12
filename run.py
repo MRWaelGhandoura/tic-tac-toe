@@ -1,4 +1,5 @@
 from player import RealPlayer, NoobComputerPlayer, ProComputerPlayer
+from colorama import Fore
 from termcolor import colored
 import time
 import pyfiglet
@@ -16,9 +17,16 @@ class TicTacToe:
     To check if the last move is a winning move
 
     """
-    def __init__(self):
-        self.board = self.make_board()
-        self.current_winner = None
+    def __init__(self, game_mode):
+        self.board = [' ' for _ in range(9)]  # 3x3 game board
+        self.current_winner = None  # track the winner
+        if game_mode == 'easy':
+            print(f"You've selected {game_mode}, good luck!\n")
+            self.computer = NoobComputerPlayer('O')
+        elif game_mode == 'hard':
+            print(f"You've selected {game_mode}, try your hardest to beat the computer!\n")  # noqa
+            self.computer = ProComputerPlayer('O')
+        self.player = RealPlayer('X')
 
     @staticmethod
     def make_board():
@@ -46,7 +54,7 @@ class TicTacToe:
     # code credit: https://www.youtube.com/watch?v=n2o8ckO-lfk&list=PLAA3uifegEK98UkLE614yowsG7OHfANz9&index=1&t=663s
     def winner(self, square, character):
         """
-        winner if player ticks 3 in a row (either vertically, horizontally, or diagonally) # noqa
+        winner if player ticks 3 in a row (either vertically, horizontally, or diagonally)
         """
 
         # checks row
@@ -82,31 +90,38 @@ class TicTacToe:
     def available_moves(self):
         return [i for i, x in enumerate(self.board) if x == " "]
 
-    def play(game, x_player, o_player, print_game=True):
-        """
-        returns the winner of the game or None if it's a tie
-        """
+def play(game_mode, print_game=True):
+    """
+    returns the winner of the game or None if it's a tie
+    """
+
+    game = TicTacToe(game_mode)
 
     if print_game:
         game.print_board_nums()
 
-    character = 'X'
-    while game.empty_squares():
-        if character == 'O':
-            square = o_player.get_move(game)
-        else:
-            square = x_player.get_move(game)
-        if game.make_move(square, character):
+    character = 'X'  # starting character
 
+    while game.empty_squares():
+        """
+        iterate as long as the game-board still has empty squares
+        gets move from appropriate player
+        """
+        if character == 'O':
+            square = game.computer.get_move(game)
+        else:
+            square = game.player.get_move(game)
+
+        if game.make_move(square, character):
             if print_game:
-                print(character + ' makes a move to square {}'.format(square))
+                print(character + f' makes a move to square {square}')
                 game.print_board()
-                print('')
+                print('')  # empty line
 
             if game.current_winner:
                 if print_game:
                     print(character + ' wins!')
-                return character  # ends loop and exits the game
+                return character
             
             # alternates between players each round
             if character == 'X':
@@ -119,8 +134,50 @@ class TicTacToe:
     if print_game:
         print('It\'s a tie!')
 
-if __name__ == '__main__':
-    x_player = ProComputerPlayer('X')
-    o_player = RealPlayer('O')
-    t = TicTacToe()
-    play(t, x_player, o_player, print_game=True)
+def welcome():
+    
+    print(Fore.YELLOW + "███████████████████████████████████████")
+    print("█                                     █")
+    print("█   ▄▄█▄▄█▄▄   " + Fore.BLUE + "TIC" + Fore.YELLOW + "                █")  
+    print("█   ▄▄█▄▄█▄▄       TAC                  █")
+    print("█   " + Fore.RED + "X" + Fore.YELLOW + " █  █ " + Fore.BLUE + "O" + Fore.YELLOW + "       " + Fore.RED + "TOE" + Fore.YELLOW + "            █") 
+    print("█                                     █")
+    print("█                    By Wael Ghandoura█")
+    print("███████████████████████████████████████\n")
+    
+    time.sleep(2)
+
+    print("Welcome to " + Fore.BLUE + "TIC" + Fore.YELLOW + "TAC " + Fore.RED + "TOE" + Fore.YELLOW + "!") 
+
+    time.sleep(2)
+
+    while True:
+        user = input("Please enter a username: \n")
+        if len(user.strip()) == 0:
+            print("Invalid username")
+            continue
+        else:
+            break
+
+    time.sleep(2)
+
+    print(f"Hello {user}!")
+
+    time.sleep(2)
+
+    # code credit: help from https://stackoverflow.com/questions/42091015/check-if-python-input-contains-a-specific-word/42091192 # noqa
+    while True:
+        difficulty = input("Please select a difficulty to continue. Type in 'easy', 'hard' or 'quit' to exit: \n").strip().lower()  # noqa
+        time.sleep(2)
+        if difficulty == 'quit':
+            print(f"Thanks for playing {user}, goodbye!")
+            break
+        elif difficulty == 'easy' or difficulty == 'hard':
+            play(difficulty)
+        else:
+            print("You need to enter a valid difficulty to continue...\n")
+            continue
+    # end credit
+
+
+welcome()
