@@ -4,6 +4,9 @@ from termcolor import colored
 import time
 import pyfiglet
 
+ASCII_BANNER = pyfiglet.figlet_format(
+    "Hello!! \n WELCOME TO TIC TAC TOE GAME!!")
+COLOR_CHOICES = ["1- Red", "2-Yellow"]    
 
 # A function to print the Tic Tac Toe board
 class TicTacToe:
@@ -14,10 +17,11 @@ class TicTacToe:
     A Display board
     To Make a move with a input tag
     To Validate the move
-    To check if the last move is a winning move
+    To check the winning move
 
     """
     def __init__(self, game_mode):
+        self.color = self.get_color()
         self.board = [' ' for _ in range(9)]  # 3x3 game board
         self.current_winner = None  # track the winner
         if game_mode == 'easy':
@@ -138,34 +142,36 @@ def play(game_mode, print_game=True):
 
 def welcome():
 
-    print(Fore.YELLOW + "███████████████████████████████████████")
-    print("█                                     █")
-    print("█   ▄▄█▄▄█▄▄   " + Fore.BLUE + "TIC" + Fore.YELLOW + "                █")
-    print("█   ▄▄█▄▄█▄▄       TAC                  █")
-    print("█   " + Fore.RED + "X" + Fore.YELLOW + " █  █ " + Fore.BLUE + "O" + Fore.YELLOW + "       " + Fore.RED + "TOE" + Fore.YELLOW + "            █")
-    print("█                                     █")
-    print("█                    By Wael Ghandoura█")
-    print("███████████████████████████████████████\n")
+    print(ASCII_BANNER)
+    print("Please Enter your name: \n")
+    username = input().strip()
+
+    while len(username) == 0:
+        print("It looks like you haven't typed anything, please enter your name!")  # noqa
+        username = input().strip()
+    # return hello message
+    print("\nHi " + f"{username}!" + " Nice to meet you!\n")
+    
 
     time.sleep(2)
 
-    print("Welcome to " + Fore.BLUE + "TIC" + Fore.YELLOW + "TAC " + Fore.RED + "TOE" + Fore.YELLOW + "!")
+    print(f"Hello {username}!")
 
     time.sleep(2)
 
-    while True:
-        user = input("Please enter a username: \n")
-        if len(user.strip()) == 0:
-            print("Invalid username")
-            continue
-        else:
-            break
-
-    time.sleep(2)
-
-    print(f"Hello {user}!")
-
-    time.sleep(2)
+    def get_color(self):
+        print("choose your color")
+        print(COLOR_CHOICES)
+        color = input().strip()
+        while color not in ["1", "2"]:
+            print("you must enter 1 or 2")
+            color = input().strip()
+        if color == "1":
+            self.color = 'red'
+        elif color == "2":
+            self.color = 'yellow'
+        print(colored("You choose your color !!", self.color))
+        print(color)
 
     # code credit: help from https://stackoverflow.com/questions/42091015/check-if-python-input-contains-a-specific-word/42091192 # noqa
     while True:
