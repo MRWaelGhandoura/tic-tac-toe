@@ -1,12 +1,12 @@
 from players import RealPlayer, NoobComputerPlayer, ProComputerPlayer
-from colorama import Fore
 from termcolor import colored
 import time
 import pyfiglet
 
 ASCII_BANNER = pyfiglet.figlet_format(
     "Hello!! \n WELCOME TO TIC TAC TOE GAME!!")
-COLOR_CHOICES = ["1- Red", "2-Yellow"]    
+COLOR_CHOICES = ["1- Red", "2-Yellow"]
+
 
 # A function to print the Tic Tac Toe board
 class TicTacToe:
@@ -20,6 +20,7 @@ class TicTacToe:
     To check the winning move
 
     """
+
     def __init__(self, game_mode):
         self.color = self.get_color()
         self.board = [' ' for _ in range(9)]  # 3x3 game board
@@ -43,7 +44,8 @@ class TicTacToe:
     @staticmethod
     def print_board_nums():
         # 0 | 1 | 2
-        number_board = [[str(i) for i in range(j*3, (j+1)*3)] for j in range(3)]
+        number_board = [[str(i) for i in range(j*3, (j+1)*3)]
+                        for j in range(3)]
         for row in number_board:
             print('| ' + ' | '.join(row) + ' |')
 
@@ -54,6 +56,20 @@ class TicTacToe:
                 self.current_winner = character
             return True
         return False
+
+    def get_color(self):
+        print("choose your color")
+        print(COLOR_CHOICES)
+        color = input().strip()
+        while color not in ["1", "2"]:
+            print("you must enter 1 or 2")
+            color = input().strip()
+        if color == "1":
+            self.color = 'red'
+        elif color == "2":
+            self.color = 'yellow'
+        print(colored("You choose your color !!", self.color))
+        print(color)    
 
     # code credit: https://www.youtube.com/watch?v=n2o8ckO-lfk&list=PLAA3uifegEK98UkLE614yowsG7OHfANz9&index=1&t=663s
     def winner(self, square, character):
@@ -151,7 +167,6 @@ def welcome():
         username = input().strip()
     # return hello message
     print("\nHi " + f"{username}!" + " Nice to meet you!\n")
-    
 
     time.sleep(2)
 
@@ -159,26 +174,12 @@ def welcome():
 
     time.sleep(2)
 
-    def get_color(self):
-        print("choose your color")
-        print(COLOR_CHOICES)
-        color = input().strip()
-        while color not in ["1", "2"]:
-            print("you must enter 1 or 2")
-            color = input().strip()
-        if color == "1":
-            self.color = 'red'
-        elif color == "2":
-            self.color = 'yellow'
-        print(colored("You choose your color !!", self.color))
-        print(color)
-
     # code credit: help from https://stackoverflow.com/questions/42091015/check-if-python-input-contains-a-specific-word/42091192 # noqa
     while True:
         difficulty = input("Please select a difficulty to continue. Type in 'easy', 'hard' or 'quit' to exit: \n").strip().lower()  # noqa
         time.sleep(2)
         if difficulty == 'quit':
-            print(f"Thanks for playing {user}, goodbye!")
+            print(f"Thanks for playing {username}, goodbye!")
             break
         elif difficulty == 'easy' or difficulty == 'hard':
             play(difficulty)
