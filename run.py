@@ -26,7 +26,7 @@ class TicTacToe:
         self.board = [' ' for _ in range(9)]  # 3x3 game board
         self.current_winner = None  # track the winner
         if game_mode == 'easy':
-            print(f"You've selected {game_mode}, good luck!\n")
+            print(f"You've selected {game_mode}, easy for you, good luck!\n")
             self.computer = NoobComputerPlayer('O')
         elif game_mode == 'hard':
             print(f"You've selected {game_mode}, good luck beating the PRO!\n")
@@ -57,24 +57,27 @@ class TicTacToe:
             return True
         return False
 
+    # code credit: https://towardsdatascience.com/prettify-your-terminal-text-with-termcolor-and-pyfiglet-880de83fda6b  # noqa
     def get_color(self):
-        print("Choose your favorite color")
+        print("choose your color\n")
         print(COLOR_CHOICES)
         color = input().strip()
+        color_choice = 'white'
         while color not in ["1", "2"]:
-            print("you must enter 1 or 2")
+            print("You must enter 1 or 2")
             color = input().strip()
         if color == "1":
-            self.color = 'red'
+            color_choice = 'red'
+            print(colored("You choose Red !!\n", color_choice))
         elif color == "2":
-            self.color = 'yellow'
-        print(colored("This is your color !!", self.color))
-        print(color)
+            color_choice = 'yellow'
+            print(colored("You choose Yellow !!\n", color_choice))
+        return color_choice
 
     # code credit: https://www.youtube.com/watch?v=n2o8ckO-lfk&list=PLAA3uifegEK98UkLE614yowsG7OHfANz9&index=1&t=663s  # noqa
     def winner(self, square, character):
         """
-        winner if player ticks 3 in a row (vertically, horizontally, or diagonally)
+        winner if player ticks 3 in a row (vertically, horizontally, or diagonally)  # noqa
         """
 
         # checks row
@@ -113,7 +116,7 @@ class TicTacToe:
 
 def play(game_mode, print_game=True):
     """
-    returns the winner of the game or None if it's a tie
+    returns the winner of the game or nothing if it's a tie
     """
 
     game = TicTacToe(game_mode)
@@ -123,11 +126,7 @@ def play(game_mode, print_game=True):
 
     character = 'X'  # starting character
 
-    while game.empty_squares():
-        """
-        as long as the game board still has empty squares,
-        the corresponding player gets a turn.
-        """
+    while game.empty_squares():  # as long as the game board still has empty squares,the corresponding player gets a turn.  # noqa
         if character == 'O':
             square = game.computer.get_move(game)
         else:
@@ -157,7 +156,7 @@ def play(game_mode, print_game=True):
 
 
 def welcome():
-
+    # code credit: https://towardsdatascience.com/prettify-your-terminal-text-with-termcolor-and-pyfiglet-880de83fda6b  # noqa
     print(ASCII_BANNER)
     print("Please Enter your name: \n")
     username = input().strip()
@@ -174,7 +173,7 @@ def welcome():
 
     time.sleep(2)
 
-    # code credit: help from https://stackoverflow.com/questions/42091015/check-if-python-input-contains-a-specific-word/42091192 # noqa
+    # code credit: https://codereview.stackexchange.com/questions/179550/python-tic-tac-toe-game-with-two-difficulty-levels # noqa
     while True:
         difficulty = input("Select a difficulty to start playing. Type in 'easy', 'hard' or 'quit' to exit: \n").strip().lower()  # noqa
         time.sleep(2)
@@ -184,9 +183,8 @@ def welcome():
         elif difficulty == 'easy' or difficulty == 'hard':
             play(difficulty)
         else:
-            print("You need to enter a valid difficulty to continue...\n")
+            print("Please enter a valid option to continue...\n")
             continue
-    # end credit
 
 
 welcome()
