@@ -119,23 +119,43 @@ A Real Player represents the human player. It is an extension of the ActualPlaye
 - **tag** The symbol to represent the human player, set to 'X' when the game is initialized.
  
 #### Methods
-- **get_moves** Allows a user to choose an available move from the game board by numeric association. It handles invalid input until the human complies.
+- **get_moves** Allows a user to select an available move on the board by numerical association. It handles invalid inputs until the human complies..
 
-#### ProComputerPlayer
+### ProComputerPlayer
 When the user selects hard for the difficulty level, they play against the ProComputerPlayer which is an extension of the ActualPlayer class.
  
 #### Properties
 - **tag** The symbol to represent the player, set to 'O' when the game is initialized.
 
 #### Methods
-- **get_moves** For the hard game mode, the computer looks at the available moves in the game and strategically picks corners to prevent the human player from winning. All games end with the computer winning or drawing the game.
+- **get_moves** In the hard game mode, the computer looks at the available moves in the game and strategically chooses corners to prevent the human player from winning. All games end in a win or a draw for the computer.
 
 - **minimax** Tracks positions and game scores in dictionaries. Uses an algorithm to simulate a game after the last move. Update the position and score dictionary.
 
-## Libraries used
-List out the python libraries you purposefully used in your project and why. You can look at your requirements.txt file and go back to https://pypi.org/ to rediscover the purpose of a library if needed.
+### Tic Tac Toe
+A game of tic tac toe
 
-A bulleted list is a good presentation for this information.
+#### Properties
+- **board** an array of 9 entries representing positions.
+- **current_winner** keeps track of whether a player has won the game or not.
+- **computer** player representing the computer.
+- **player** player representing the human user.
+
+#### Methods
+- **print_board(self)** Prints the board on the terminal.
+- **print_board_nums()** Prints the numbers corresponding to the empty squares on which the user will make a move.
+- **available_moves(self)** Appends an index to an empty list IF the spot is empty, and confirms the move if the spot is empty.
+- **available_moves_display(self)** Creates a 9 digit array of blanks for executed moves, making it easy to print out what moves the user can make next to the board.
+- **empty_squares(self)** Returns/tracks all empty squares during the game.
+- **make_move(self, square, character)** Places the user's and the computer's  according to the given index. If the index is an empty square, return True and the move is executed. If the index is occupied, return False and invalidate the move.
+- **winner(self, square, character)** Checks if the previous move was a winning move. If so, return True and end the game. Otherwise, return False and continue the game.
+
+## Libraries used
+- Colorama: used to color the game throughout.
+- Pyfiglet: used to print out a ASCII welcome format to the user.
+- Random: used to randomize the computer's moves in the"easy" mode and the first move the genius computer makes.
+- Math: used to code the minimax algorithm to make the genius computer player.
+- Time: used the sleep() function between messages to the user to allow time for reading.
 
 ## Testing
 
