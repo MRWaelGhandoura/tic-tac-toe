@@ -1,36 +1,20 @@
-# OVERVIEW
-
-This template was made as a guide to ensure you cover assessment criteria in your third milestone write up. It is specific to the **PORTFOLIO 3: Python Essentials** project. It was based off the [battleship readme](https://codeinstitute.s3.amazonaws.com/CSSEssentials/p3-readme.png) with a few additions to help elevate you to possible distinction status.
-
-## Helpful tools
-
-Markdown's not all that easy so sometimes you may want to use some tools to make tables. 
-
-- [Markdown Cheatsheet](https://guides.github.com/features/mastering-markdown/)
-- [markdown table generator](https://www.tablesgenerator.com/markdown_tables) - used to help with documentation table formatting
-- [mardown table of contents generator](https://ecotrust-canada.github.io/markdown-toc/) - used to create table of contents (be weary it does have some bugs if you have dashes or trailing spaces in your headers)
-- [readme.so](https://readme.so/) - if you don't want to learn markdown, this tool might help you
-
-# Table of Contents
-Copy your readme to http://ecotrust-canada.github.io/markdown-toc/ to make a table of contents.  This will help assessors to see the structure of your readme. Just test it out ast this tool isn't perfect. It tends to mess up with special characters like dashes.
-
-====================================== The Sections you Fill in are below ==============================
-
 # TIC TAC TOE
 
 ![image](https://user-images.githubusercontent.com/99558735/168180857-756cfd07-711f-4d6a-ba5d-2da1143f0f6e.png)
 
-- You can view my deployed app [here]https://tic-tac-toe-waelgh.herokuapp.com/
+- You can view my deployed app([here]https://tic-tac-toe-waelgh.herokuapp.com/).
 
 ## Author
-DEVELOPER_NAME
+WAEL GHANDOURA
 
 ## Project Overview
-- Include a recording of site that shows the terminal interaction.
-  https://chrome.google.com/webstore/detail/loom-for-chrome/liecbddmkiiihnedobmlmillhodjkdmb is a very intuitive and free tool to do a web recording.
-- Then you can use https://cloudconvert.com/mp4-to-gif to convert the mp4 to a gif and just paste it into the readme via git hub and it'll resovle itself.
-- One or two sentences providing an overview of your project.
-- Include a link to your deployed website
+
+![Python Terminal by Code Institute - Google Chrome - 13 May 2022](https://user-images.githubusercontent.com/99558735/168200871-97ef977d-e519-49ca-8543-87367aef0536.gif)
+
+
+- A Tic Tac Toe game, a player versus computer style game, developed with Python as the only language. It contains two difficulty levels that are selected by the user   ( Noob level and Pro level). The user can select a color theme to use the character on the game board. The user can then play either against a computer that randomly   selects its moves, or against a computer that maximizes its wins while minimizing its losses, making it unbeatable.
+
+- You can view my deployed app([here]https://tic-tac-toe-waelgh.herokuapp.com/).
 
 ## Table of Contents
 Generate after readme is complete for UX and below
@@ -101,6 +85,14 @@ You should try to ensure you code is valid and follows proper indentation.  In t
 - [JS validation](https://jshint.com) for each .js file/ , if using ES6, add this before pasting in your file: `/*jshint esversion: 6 */ `
 - [JSON validation](https://jsonlint.com/) for each .json file 
 - [PEP8 Validator](http://pep8online.com/) include a screenshot of results
+
+![image](https://user-images.githubusercontent.com/99558735/168196722-0373034b-a160-47f4-8cae-6eb3cb8cfb65.png)
+
+ for the run.py
+ 
+ ![image](https://user-images.githubusercontent.com/99558735/168196814-12f3c760-7866-4440-8b9c-8f2e9ed83128.png)
+ 
+  for the players.py
 
 Note any errors or warnings you are ignoring and why. IT IS BEST NOT to have ERRORS, but NINJA, COLOR VARIABLES sometimes are ok to ignore if you say the IDE that has the correct linters noted no errors. Or you can take the rendered HTML and run it through the HTML validator for the Flask html templates.
 
