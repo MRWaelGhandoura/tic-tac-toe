@@ -30,6 +30,8 @@ WAEL GHANDOURA
 
 ## Features
 
+### Implemented Features
+
 - Game logo: as a welcome to the user as a Pyfiglet/ASCII text
  inhereted from : https://towardsdatascience.com/prettify-your-terminal-text-with-termcolor-and-pyfiglet-880de83fda6b
  
@@ -69,15 +71,11 @@ WAEL GHANDOURA
 
 
 
-### Implemented Features
-In each subsection, write out what the feature is for and what value it adds. If there is terminal interaction or output associated with the function, include a screenshot.
-
-
 ### Future Features
 
-Use this section to discuss plans for additional features to be implemented in the future:
-
-If you end up not developing some features you hoped to implement, you can include those in this section.
+- An option for the user to choose a tag to start with.
+- An option to store the score of the user with a score board.
+- Adding more colors and animation to the game.
 
 
 ## Design Documents
