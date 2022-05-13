@@ -164,21 +164,17 @@ A game of tic tac toe
 
 
 ### Validation Testing
-You should try to ensure you code is valid and follows proper indentation.  In this section you should write up any websites you used to validate your code. As your projects becomes more complex these tools may change.
 
-- [CSS Validator](https://jigsaw.w3.org/css-validator/) Note, any error associated with root: color variables were ignored.
-- [HTML Validator](https://validator.w3.org/)
-- [JS validation](https://jshint.com) for each .js file/ , if using ES6, add this before pasting in your file: `/*jshint esversion: 6 */ `
-- [JSON validation](https://jsonlint.com/) for each .json file 
-- [PEP8 Validator](http://pep8online.com/) include a screenshot of results
+- [PEP8 Validator](http://pep8online.com/)
 
-![image](https://user-images.githubusercontent.com/99558735/168196722-0373034b-a160-47f4-8cae-6eb3cb8cfb65.png)
 
- for the run.py
+- For the run.py
  
- ![image](https://user-images.githubusercontent.com/99558735/168196814-12f3c760-7866-4440-8b9c-8f2e9ed83128.png)
+ ![image](https://user-images.githubusercontent.com/99558735/168196722-0373034b-a160-47f4-8cae-6eb3cb8cfb65.png)
  
-  for the players.py
+ - For the players.py
+  
+  ![image](https://user-images.githubusercontent.com/99558735/168196814-12f3c760-7866-4440-8b9c-8f2e9ed83128.png)
 
 Note any errors or warnings you are ignoring and why. IT IS BEST NOT to have ERRORS, but NINJA, COLOR VARIABLES sometimes are ok to ignore if you say the IDE that has the correct linters noted no errors. Or you can take the rendered HTML and run it through the HTML validator for the Flask html templates.
 
