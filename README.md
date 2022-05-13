@@ -80,9 +80,14 @@ WAEL GHANDOURA
 
 ## Design Documents
 
-This section is where you would share logic diagrams and spreadsheets that you created as part of the design process. These files should themselves either be included as a pdf file in the project itself (in a separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser. 
+- Game flow chart using : https://lucid.app/lucidchart/
 
-The flowchart can be as simple as a picture of a drawing of how you envisioned laying out the logic for you project, or done with a professional tool such as powerpoint, googlesheets, or [https://app.diagrams.net/](https://app.diagrams.net/) They are a roadmap and do not have to be 100% accurate of the final product.
+![image](https://user-images.githubusercontent.com/99558735/168215286-d6cf9ac1-c2f9-437b-89fd-3e8b392778b6.png)
+
+- Code flow chart:
+
+![image](https://user-images.githubusercontent.com/99558735/168218058-9d8cf774-b55f-4b9d-8169-5bb47c64171b.png)
+
 
 ## Data Model/ Classes
 In this section write our your data model(s) or classes. 
