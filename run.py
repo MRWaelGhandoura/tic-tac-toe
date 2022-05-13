@@ -58,7 +58,7 @@ class TicTacToe:
             return True
         return False
 
-    # code credit: https://towardsdatascience.com/prettify-your-terminal-text-with-termcolor-and-pyfiglet-880de83fda6b  # noqa
+    # code credit: https://www.geeksforgeeks.org/print-colors-python-terminal/ # noqa
     def get_color(self):
         print("choose your color\n")
         print(COLOR_CHOICES)
