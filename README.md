@@ -90,25 +90,47 @@ WAEL GHANDOURA
 
 
 ## Data Model/ Classes
-In this section write our your data model(s) or classes. 
 
-You might want to include subsections that include how the data in the model is initialized and then the methods that you created to update it through the program.
+## Classes
+Four classes were created on an another python sheet to get let the coding be more organized.
 
+### ActualPlayer
+A superclass is created for the user, the computer  level and computer Pro level.
 
-You can create a table and take a screenshot, or you can write up subsections in markdown:
+#### Properties
+- **tag** the symbol to use to represent the player X or 0.
 
-![image](https://user-images.githubusercontent.com/23039742/130148204-b56406bf-0fff-48f3-9dee-2f3cdbe67cc5.png)
+#### Methods
+- **get_moves**  Method to choose a move based on a game's board.
 
-### Class X
-To better group the game as an object, I wrote a class representing its properties and had method functions to update those properties: 
+### NoobComputerPlayer
+A computer player is the computer in easy mode, it is an extension of the ActualPlayer class.
+ 
+#### Properties
+- **tag** The symbol to represent the player, set to 'O' when the game is initialized.
+ 
+#### Methods
+- **get_moves** For the easy game mode, the computer looks at the game's available moves and randomly chooses one.
 
-**Properties**
-- property 1: is a {string} it represents {something} 
-- property 2: is a {string} it represents {something} 
+### RealPlayer
+A Real Player represents the human player. It is an extension of the ActualPlayer class.
+ 
+#### Properties
+- **tag** The symbol to represent the human player, set to 'X' when the game is initialized.
+ 
+#### Methods
+- **get_moves** Allows a user to choose an available move from the game board by numeric association. It handles invalid input until the human complies.
 
-**Methods**
-- **\_\_init\_\_**: Initialize method, it starts the class off with default parameters as if a user just started to play a game.
-- **\_\_str\_\_**: Returns a string representation of the class/object
+#### ProComputerPlayer
+When the user selects hard for the difficulty level, they play against the ProComputerPlayer which is an extension of the ActualPlayer class.
+ 
+#### Properties
+- **tag** The symbol to represent the player, set to 'O' when the game is initialized.
+
+#### Methods
+- **get_moves** For the hard game mode, the computer looks at the available moves in the game and strategically picks corners to prevent the human player from winning. All games end with the computer winning or drawing the game.
+
+- **minimax** Tracks positions and game scores in dictionaries. Uses an algorithm to simulate a game after the last move. Update the position and score dictionary.
 
 ## Libraries used
 List out the python libraries you purposefully used in your project and why. You can look at your requirements.txt file and go back to https://pypi.org/ to rediscover the purpose of a library if needed.
