@@ -16,10 +16,11 @@ Copy your readme to http://ecotrust-canada.github.io/markdown-toc/ to make a tab
 
 ====================================== The Sections you Fill in are below ==============================
 
-# PROJECT NAME
-*replace the **PROJECT NAME** header with your project's name*
-- Screenshot of logo/navigation of mobile deployed site
-- Include a link to deployed project with one line explanation of project
+# TIC TAC TOE
+
+![image](https://user-images.githubusercontent.com/99558735/168180857-756cfd07-711f-4d6a-ba5d-2da1143f0f6e.png)
+
+- You can view my deployed app [here]https://tic-tac-toe-waelgh.herokuapp.com/
 
 ## Author
 DEVELOPER_NAME
@@ -252,6 +253,12 @@ Do not share your personal keys but either cut them out of the screen shot or sa
 Make a fork so you have a copy of the repository in your own git hub account: https://github.com/maliahavlicek/portfolio_project_03
 
 ![image](https://user-images.githubusercontent.com/23039742/132136504-eb79a6f3-0205-4c82-80c2-eef136ec7e4c.png)
+  
+![image](https://user-images.githubusercontent.com/99558735/168186379-c6e5bc87-e566-4db6-a2be-9147157be06c.png)
+![image](https://user-images.githubusercontent.com/99558735/168186433-02d15074-ee62-468c-9c24-1426828153b6.png)
+  ![image](https://user-images.githubusercontent.com/99558735/168186467-a06cc6b5-7109-4492-8b5f-5afd0e1829e5.png)
+
+
 
 
 #### New Project
