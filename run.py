@@ -1,5 +1,5 @@
 from players import RealPlayer, NoobComputerPlayer, ProComputerPlayer
-from termcolor import colored
+import colorama
 import time
 import pyfiglet
 
@@ -39,7 +39,8 @@ class TicTacToe:
 
     def print_board(self):
         for row in [self.board[i*3:(i+1) * 3] for i in range(3)]:
-            print('| ' + ' | '.join(row) + ' |')
+            print(('| ' + ' | '.join(row) + ' |').replace('X',
+                  f'{self.color}X{colorama.Fore.WHITE}'))
 
     @staticmethod
     def print_board_nums():
@@ -67,11 +68,13 @@ class TicTacToe:
             print("You must enter 1 or 2")
             color = input().strip()
         if color == "1":
-            color_choice = 'red'
-            print(colored("You choose Red !!\n", color_choice))
+            color_choice = colorama.Fore.RED
+            # print(colored("You choose Red !!\n", color_choice))
+            print(f'{color_choice}You choose Red !!\n{colorama.Fore.WHITE}')
         elif color == "2":
-            color_choice = 'yellow'
-            print(colored("You choose Yellow !!\n", color_choice))
+            color_choice = colorama.Fore.YELLOW
+            # print(colored("You choose Yellow !!\n", color_choice))
+            print(f'{color_choice}You choose Yellow !!\n{colorama.Fore.WHITE}')
         return color_choice
 
     # code credit: https://www.youtube.com/watch?v=n2o8ckO-lfk&list=PLAA3uifegEK98UkLE614yowsG7OHfANz9&index=1&t=663s  # noqa
