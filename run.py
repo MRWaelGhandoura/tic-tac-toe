@@ -170,11 +170,11 @@ def welcome():
     # return hello message
     print("\nHi " + f"{username}!" + " Nice to meet you!\n")
 
-    time.sleep(2)
+    time.sleep(1)
 
     print(f"Hello {username}!")
 
-    time.sleep(2)
+    time.sleep(1)
 
     # code credit: https://codereview.stackexchange.com/questions/179550/python-tic-tac-toe-game-with-two-difficulty-levels # noqa
     while True:
