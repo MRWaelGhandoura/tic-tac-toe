@@ -172,10 +172,6 @@ def welcome():
 
     time.sleep(1)
 
-    print(f"Hello {username}!")
-
-    time.sleep(1)
-
     # code credit: https://codereview.stackexchange.com/questions/179550/python-tic-tac-toe-game-with-two-difficulty-levels # noqa
     while True:
         difficulty = input("Select a difficulty to start playing. Type in 'easy', 'hard' or 'quit' to exit: \n").strip().lower()  # noqa
