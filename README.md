@@ -182,124 +182,46 @@ A game of tic tac toe
 
 
 
-### Defect Tracking
-
-You can use git hub issues to track any bugs rather than a spread sheet and just link to that page for your repository.
-
-![image](https://user-images.githubusercontent.com/23039742/130149053-bf506388-a791-426e-8ffc-a56c1212e01c.png)
-
-You should created issues in real time and close them out as you fix the bugs. Include steps to recreate and screenshots.
-
-Create a link to the issues dashboard  of your repository
-[ci_insights isssues](https://github.com/maliahavlicek/ci_mentor_insights/issues)
-
-### Defects of Note
-Some defects are more pesky than others. Highlight 3-5 of the bugs that drove you the most nuts and how you finally ended up resolving them.
-
-
-### Outstanding Defects
-It's ok to not resolve all the defects you found. If you know of something that isn't quite right, list it out and explain why you chose not to resolve it.
-
-### Commenting Code
-
-Make sure you  use triple double quotes to document fuctions and classes.
- Here'a  documentation worthy example:
-```$python
-def yes_no(question):
-    """
-    Function to ask a simple yes no question of the user.
-    :param question: String displayed as the question
-    :return: answer: String equal to "1" or "2" representing yes or no respectfully
-    """
-    print(question)
-    print("yes = 1")
-    print("no = 2")
-    answer = input("enter your answer here \n").strip()
-    while answer not in ("1", "2"):
-        print("please choose 1 for yes and 2 for no")
-        answer = input("enter your answer here \n").strip()
-    return answer
-
-```
 
 ## Deployment
 
-### Requirements
-If the user is required to have certain keys and credentials you should include this section with diretions on how to get the necessary information.
-ex)
-1. **Google Account:** In order to have this program work, you need a google account. If you don't have one  [Create a google account](https://accounts.google.com/Signup)
-2. **Google APIs**
-    1. in a new incognito tab, log into your new google account.
-    1. then update the url to be: https://console.cloud.google.com/getting-started?pli=1 
-        
-        **GOOGLE DRIVE API Access**
-        1.  create a new project for this, call it XXXXXX (You might want to refer to what you see in this video: https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LS101+2021_T1/courseware/293ee9d8ff3542d3b877137ed81b9a5b/071036790a5642f9a6f004f9888b6a45/ at the bottom of the screen to write out steps.)
-        2. Then click on Add APIs and Services and select Libraries
-        3. Search for Google Drive
-        4. Click Enable
-        5. Click Create Credentials
-        6. Select Google Drive API from the drop down, Application Data, then no and click the Next Button
-        7.  (https://developers.google.com/drive/api/v3/enable-drive-api) 
-        8. for service account details fill in a service account name ex) xxx_API, then click Create and Continue
-        9. For the Accoun acces, select Role: Basic/Editor then continue
-        10. Then Click Done
-        11. Now select the newly created service account
-        12. Click on the KEYS Tab
-        13. Click Add Key
-        14. Select JSON type (right click to show in folder so you know where the file was saved.
-        
-        **GOOGLE SHEETS API Access**
-        You may need to us the back button get to the APIS & SErvices section from where you were.
-        1. click the Libray  Tab and serarch for Google Sheets
-        2. click enable
-
-3. The downloaded credentialsJSON file is basically your creds.json file that you need to put into your heroku settings or gitpod environment to access your google drive.
-
-4. Google Sheet Template
-  - If you had to create specific sheets for your project, instruct users to make their own copy of it from yours and rename it back to what the python project expects
-  - And don't forget to share the spreadsheet in question with the client_email from the creds.json 
-### Gitpod
-This section should describe the process someone would have to go through to get the local working in gitpod.  Such as install requirements.txt  and setting up a creds.json file that is in the gitignore and keeping their workspace.
-
-If you have project settings required such as a creds.json file from the GOOGLE DRIVE API acess, please provide an example of that file in the writeup with the project key values:
-```$python
-{
-    "type": "service_account",
-    "project_id": "<YOUR_VALUE>",
-    "private_key_id": "<YOUR_VALUE>",
-    "private_key": "<YOUR_VALUE>",
-    "client_email": "<YOUR_VALUE>",
-    "client_id": "<YOUR_VALUE>",
-    "auth_uri": "https://accoutns.google.com/0/oauth2/auth",
-    "token_uri": "https://oauth2.googleapis.com/token",
-    "auth_provider_x509_cer_url": "https://www.googleapis.com/oauth2/v1/certs",
-    "clien_x509_cert_url": "<YOUR_VALUE>"
-}
-```
-
-If you have any dependencies, you should instruct users to install them
-```$python
-pip3 install -r requirements.txt
-```
-
-
 
 ### Heroku
-This section should describe the process you went through to deploy the project to Heroku. Include screenshots if you think they would make the process easier.
+- 1) Head to [Heroku](https://heroku.com) and create an account.
+- 2) Click on "Create New App".
+- 3) Name your app, select your region and click on "Create app".
 
-You may want to re-watch the [python essentials deployment video](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LS101+2021_T1/courseware/293ee9d8ff3542d3b877137ed81b9a5b/e3b664e16366444c8d722c5d8340b340/?child=first) when writing up this section.
+  ![image](https://user-images.githubusercontent.com/99558735/168227066-bdaf5b5a-f529-413d-bc44-2787b19694c2.png)
 
+- 4) On your app's dashboard bar, click on "Settings" and then click on "Reveal Config Vars".
 
-If you have project settings required for Heroku, provide a table of the keys and values.
-Do not share your personal keys but either cut them out of the screen shot or say <YOUR_VALUE> and include links on how the user would obtain such values.
+ ![image](https://user-images.githubusercontent.com/99558735/168227384-23005727-2123-464c-885f-0f8543db6377.png)
+ 
+- 5) Enter a key with the value of "PORT" and a value with the value of "8000", then click on "Add".
+ 
+ ![image](https://user-images.githubusercontent.com/99558735/168227540-9534f5fc-9a80-4ea7-8d31-4b859ed75e4b.png)
+ 
+ 
+- 6) Scroll down and click on "Add buildpack", select "python" and "Save changes".
+- 7) Repeat step 6 and select "nodejs" instead of "python" (they should be added in that order, python first and nodejs after).
+
+<img width="830" alt="deployment4" src="https://user-images.githubusercontent.com/82375381/132575097-06258f70-6951-44da-9573-3c9523c839c6.png">
+
+ - 8) Manual deploy to Heroku 
+
+ ![image](https://user-images.githubusercontent.com/99558735/168186379-c6e5bc87-e566-4db6-a2be-9147157be06c.png)
+ 
+ ![image](https://user-images.githubusercontent.com/99558735/168186433-02d15074-ee62-468c-9c24-1426828153b6.png)
+ 
+ ![image](https://user-images.githubusercontent.com/99558735/168186467-a06cc6b5-7109-4492-8b5f-5afd0e1829e5.png)
 
 #### Fork the repository
 Make a fork so you have a copy of the repository in your own git hub account: https://github.com/maliahavlicek/portfolio_project_03
 
 ![image](https://user-images.githubusercontent.com/23039742/132136504-eb79a6f3-0205-4c82-80c2-eef136ec7e4c.png)
   
-![image](https://user-images.githubusercontent.com/99558735/168186379-c6e5bc87-e566-4db6-a2be-9147157be06c.png)
-![image](https://user-images.githubusercontent.com/99558735/168186433-02d15074-ee62-468c-9c24-1426828153b6.png)
+
+
   ![image](https://user-images.githubusercontent.com/99558735/168186467-a06cc6b5-7109-4492-8b5f-5afd0e1829e5.png)
 
 
