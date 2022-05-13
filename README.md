@@ -29,11 +29,44 @@ WAEL GHANDOURA
 - At the end you have the choice to play again or to quit by typing quit.
 
 ## Features
-Use this section to itemize the features of your project. 
 
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
+- Game logo: as a welcome to the user as a Pyfiglet/ASCII text
+ inhereted from : https://towardsdatascience.com/prettify-your-terminal-text-with-termcolor-and-pyfiglet-880de83fda6b
+ 
+![image](https://user-images.githubusercontent.com/99558735/168204158-19037782-48cf-4e79-b216-6eb0230d45d4.png)
 
-It's easiest to break this section down into piece parts or core functionality blocks such as data upload, user input, analysis and data output; focusing on the atomic functions and data model(s) or classes you created to make the program work. 
+
+- Game intro: letting the user enters his name
+
+![image](https://user-images.githubusercontent.com/99558735/168204654-82c2a319-892a-4b29-8d86-8309768fff1e.png)
+
+
+- Game mode: with two choices for the difficulty , and the one if he wishes to quit the game. 
+- If you choose the "easy" option, the user plays against a computer that chooses its moves randomly and is therefore easy to beat. When choosing "hard", the user    plays against an ingenious computer that uses an algorithm to maximize its score while minimizing its losses, making it seemingly unbeatable. Finally, the "Quit" option offers the user a way to end the game. With each option, a personalized message is given to the user.
+
+![image](https://user-images.githubusercontent.com/99558735/168205285-bdd26ad8-4033-47c1-8fc2-0204b5ad3556.png)
+
+
+- Color mode: with two choices for the user, who can choose between red and yellow. 
+- The selected color is printed on the board which makes it easier for the user's eyes to distinguish between his color and the color of the computer character.
+
+![image](https://user-images.githubusercontent.com/99558735/168205909-fc0306f6-08be-49ef-92dd-c422a0446446.png)
+
+![image](https://user-images.githubusercontent.com/99558735/168205977-c6a4cc0d-721e-4308-803f-67bdb87bc9d9.png)
+
+![image](https://user-images.githubusercontent.com/99558735/168206051-82d1b9c2-3207-47ad-b427-09718883b6d9.png)
+
+![image](https://user-images.githubusercontent.com/99558735/168206088-6ec8dec3-64e0-427e-8e8b-b0cabe95d577.png)
+
+
+- Result mode: After each move, the game checks if the previous move was a winning move (a straight line vertically, horizontally or diagonally) and if it finds a winning move, it gives it to the tag with which the straight line was scored. If no moves are available on the board and no one has won, the game sends the "Tie" message.
+
+![image](https://user-images.githubusercontent.com/99558735/168206414-f396e28b-79bf-49a1-b01c-85233129d89b.png)
+
+![image](https://user-images.githubusercontent.com/99558735/168206583-03bfd6cb-a148-4af4-94bf-dcf9a852ac5e.png)
+
+![image](https://user-images.githubusercontent.com/99558735/168206701-e953374a-b8db-4d65-90fa-ad8f29b7893b.png)
+
 
 
 ### Implemented Features
