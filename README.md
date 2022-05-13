@@ -20,17 +20,19 @@ Copy your readme to http://ecotrust-canada.github.io/markdown-toc/ to make a tab
 
 ![image](https://user-images.githubusercontent.com/99558735/168180857-756cfd07-711f-4d6a-ba5d-2da1143f0f6e.png)
 
-- You can view my deployed app [here]https://tic-tac-toe-waelgh.herokuapp.com/
+- You can view my deployed app([here]https://tic-tac-toe-waelgh.herokuapp.com/).
 
 ## Author
 DEVELOPER_NAME
 
 ## Project Overview
-- Include a recording of site that shows the terminal interaction.
-  https://chrome.google.com/webstore/detail/loom-for-chrome/liecbddmkiiihnedobmlmillhodjkdmb is a very intuitive and free tool to do a web recording.
-- Then you can use https://cloudconvert.com/mp4-to-gif to convert the mp4 to a gif and just paste it into the readme via git hub and it'll resovle itself.
-- One or two sentences providing an overview of your project.
-- Include a link to your deployed website
+
+![Python Terminal by Code Institute - Google Chrome - 13 May 2022](https://user-images.githubusercontent.com/99558735/168200871-97ef977d-e519-49ca-8543-87367aef0536.gif)
+
+
+- A Tic Tac Toe game, a player versus computer style game, developed with Python as the only language. It contains two difficulty levels that are selected by the user   ( Noob level and Pro level). The user can select a color theme to use the character on the game board. The user can then play either against a computer that randomly   selects its moves, or against a computer that maximizes its wins while minimizing its losses, making it unbeatable.
+
+- You can view my deployed app([here]https://tic-tac-toe-waelgh.herokuapp.com/).
 
 ## Table of Contents
 Generate after readme is complete for UX and below
