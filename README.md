@@ -158,8 +158,10 @@ A game of tic tac toe
 - Time: used the sleep() function between messages to the user to allow time for reading.
 
 ## Testing
+### Manual Testing
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your features and ensure that they all work as intended in an easy and straightforward way for the users to achieve their goals.
+- You will find my manual testing sheet [here](https://docs.google.com/spreadsheets/d/1fMe3BTr-Y4Ad66SLm8-v50p5OfLmdcYoYzU7DUQ-fQU/edit#gid=296578096).
+
 
 ### Validation Testing
 You should try to ensure you code is valid and follows proper indentation.  In this section you should write up any websites you used to validate your code. As your projects becomes more complex these tools may change.
