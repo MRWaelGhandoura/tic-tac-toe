@@ -253,6 +253,12 @@ Do not share your personal keys but either cut them out of the screen shot or sa
 Make a fork so you have a copy of the repository in your own git hub account: https://github.com/maliahavlicek/portfolio_project_03
 
 ![image](https://user-images.githubusercontent.com/23039742/132136504-eb79a6f3-0205-4c82-80c2-eef136ec7e4c.png)
+  
+![image](https://user-images.githubusercontent.com/99558735/168186379-c6e5bc87-e566-4db6-a2be-9147157be06c.png)
+![image](https://user-images.githubusercontent.com/99558735/168186433-02d15074-ee62-468c-9c24-1426828153b6.png)
+  ![image](https://user-images.githubusercontent.com/99558735/168186467-a06cc6b5-7109-4492-8b5f-5afd0e1829e5.png)
+
+
 
 
 #### New Project
