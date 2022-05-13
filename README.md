@@ -2,7 +2,6 @@
 
 ![image](https://user-images.githubusercontent.com/99558735/168180857-756cfd07-711f-4d6a-ba5d-2da1143f0f6e.png)
 
-- You can view my deployed app([here]https://tic-tac-toe-waelgh.herokuapp.com/).
 
 ## Author
 WAEL GHANDOURA
@@ -14,13 +13,20 @@ WAEL GHANDOURA
 
 - A Tic Tac Toe game, a player versus computer style game, developed with Python as the only language. It contains two difficulty levels that are selected by the user   ( Noob level and Pro level). The user can select a color theme to use the character on the game board. The user can then play either against a computer that randomly   selects its moves, or against a computer that maximizes its wins while minimizing its losses, making it unbeatable.
 
-- You can view my deployed app([here]https://tic-tac-toe-waelgh.herokuapp.com/).
+- You can view my deployed app https://tic-tac-toe-waelgh.herokuapp.com/.
 
-## Table of Contents
-Generate after readme is complete for UX and below
 
 ## How To Play/Use
-Paragraph or bullet points of how the user initiates the program and interfaces with it. You could have videos of each bit if you want and ditact what the user should do.
+
+- Go to the page : https://tic-tac-toe-waelgh.herokuapp.com/
+- Click on "Run Program."
+- Enter your user name.
+- Choose your color.
+- Select the difficulty level (either "easy" or "hard").
+- You will be playing against a computer.
+- Choose your first move from a numbered list of empty squares from 0 to 8.
+- Then wait for the computer's turn, and when the board is full, which means the game ends, a result display appears, whether a win, a loss, or a draw.
+- At the end you have the choice to play again or to quit by typing quit.
 
 ## Features
 Use this section to itemize the features of your project. 
