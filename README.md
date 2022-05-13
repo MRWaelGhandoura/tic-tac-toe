@@ -215,67 +215,30 @@ A game of tic tac toe
  
  ![image](https://user-images.githubusercontent.com/99558735/168186467-a06cc6b5-7109-4492-8b5f-5afd0e1829e5.png)
 
-#### Fork the repository
-Make a fork so you have a copy of the repository in your own git hub account: https://github.com/maliahavlicek/portfolio_project_03
-
-![image](https://user-images.githubusercontent.com/23039742/132136504-eb79a6f3-0205-4c82-80c2-eef136ec7e4c.png)
-  
-
-
-  ![image](https://user-images.githubusercontent.com/99558735/168186467-a06cc6b5-7109-4492-8b5f-5afd0e1829e5.png)
-
-
-
-
-#### New Project
-Log into Heroku and create a new project. Name it something like XXX_coders_bistro.
-
-
-#### Settings
-On the settings tab you have to address two things:
-1. **Config Vars**
-
-  ![image](https://user-images.githubusercontent.com/23039742/132135869-215d2e0f-805d-40a8-a8c2-fb1098e2645d.png)
-
-  At a bar minimum you should show the user that they need to add the PORT. 8000 key value pair.
-
-
-2. **Build Packs**
-
-  ![image](https://user-images.githubusercontent.com/23039742/132135918-28cac112-7766-4277-905c-4a4963d8442d.png)
-
-  add Python Then Node.js
-
-
-#### Deploy
-1. Set up to github and select the correct repository:
-
-  ![image](https://user-images.githubusercontent.com/23039742/132136113-c257c921-d10c-4ccc-af09-6a1d25136395.png)
-
-2. Deploy either manual or automatic
-
-![image](https://user-images.githubusercontent.com/23039742/132136241-9d76fabb-39f0-4696-bc5f-047398fdaf41.png) 
-
-
 
 ## Credits
 
-To avoid plagiarism amd copyright infringement, you should mention any other projects, stackoverflow, videos, blogs, etc that you used to gather imagery or ideas for your code even if you used it as a starting point and modified things. Giving credit to other people's efforts and ideas that saved you time acknowledges the hard work others did. 
-
--[Code Institute Template](https://github.com/Code-Institute-Org/python-essentials-template)
+### Code Institute
+- - [Code Institute Template](https://github.com/Code-Institute-Org/python-essentials-template)
     - The Template for the GUI for this project was provided by Code Institute. This allows for the Command line to be shown and used within the browser.
 
-### Content
+### GitHub
 
-Use bullet points to list out sites you copied text from and cross-reference where those show up on your site
+- https://github.com/gabriel-alves-p
+    - Help with his ogranized Readme.md .
 
-### Media
+### Tutorials
 
-Make a list of sites you used images from. If you used several sites try to match up each image to the correct site. This includes attribution for icons if they came from font awesome or other sites, give them credit.
+- https://www.youtube.com/watch?v=dK6gJw4-NCo&list=PLAA3uifegEK98UkLE614yowsG7OHfANz9&index=2
+- https://www.youtube.com/watch?v=8ext9G7xspg
+- https://www.youtube.com/watch?v=n2o8ckO-lfk&list=PLAA3uifegEK98UkLE614yowsG7OHfANz9&index=1&t=663s
+- https://www.youtube.com/watch?v=M3G1ZgOMFxo&t=549s
+- https://www.youtube.com/watch?v=trKjYdBASyQ&t=56s
 
 ### Acknowledgments
 
-This is the section where you refer to code examples, mentors, blogs, stack overflow answers and videos that helped you accomplish your end project. Even if it's an idea that you updated you should note the site and why it was important to your completed project.
+Thanks to the help and support of:
 
-If you used a CodeInstitute Instructional project as a starting point. Make note of that here too.
-
+- My Code Institute mentor Malia Havlicek, who explained all the problems I faced while creating this project and helped me solve them in a professional way.
+- The community on Slack, who helped me connect with Heroku.
+- Code Institute, which taught me all those challenging and wonderful methods to become an excellent programmer.
